@@ -1,0 +1,215 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-bg: #121212;
+  --color-surface: #1a1a1a;
+  --color-surface2: #222222;
+  --color-border: rgba(255, 255, 255, 0.08);
+  --color-text: #E0E0E0;
+  --color-muted: #9CA3AF;
+  --color-emerald: #10B981;
+  --color-emerald-light: #34D399;
+  --color-emerald-dark: #059669;
+  --font-sans: 'Inter', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #121212;
+  color: #E0E0E0;
+  font-family: 'Inter', sans-serif;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #121212;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #10B981;
+  border-radius: 3px;
+}
+
+/* ── Glassmorphism ── */
+.glass {
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-nav {
+  background: rgba(18, 18, 18, 0.8);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* ── Emerald gradient text ── */
+.gradient-text {
+  background: linear-gradient(135deg, #10B981 0%, #34D399 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Section padding ── */
+.section-padding {
+  padding: 8rem 0;
+}
+
+@media (min-width: 768px) {
+  .section-padding {
+    padding: 10rem 0;
+  }
+}
+
+/* ── Inner container (centered, with horizontal padding) ── */
+.container-inner {
+  max-width: 72rem;
+  /* 1152px = max-w-6xl */
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  width: 100%;
+}
+
+@media (min-width: 1024px) {
+  .container-inner {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+
+/* ── Navbar ── */
+.navbar-inner {
+  max-width: 72rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1.75rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@media (min-width: 1024px) {
+  .navbar-inner {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+
+/* ── Emerald glow ── */
+.emerald-glow {
+  box-shadow: 0 0 20px rgba(16, 185, 129, 0.25);
+}
+
+.emerald-glow:hover {
+  box-shadow: 0 0 35px rgba(16, 185, 129, 0.45);
+}
+
+/* ── Animated mesh bg ── */
+.mesh-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 20% 50%, rgba(16, 185, 129, 0.08) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 20%, rgba(16, 185, 129, 0.05) 0%, transparent 40%),
+    radial-gradient(ellipse at 60% 80%, rgba(52, 211, 153, 0.04) 0%, transparent 40%);
+  pointer-events: none;
+}
+
+/* ── Skill card hover ── */
+.skill-card:hover .skill-icon {
+  color: #10B981;
+  filter: drop-shadow(0 0 8px rgba(16, 185, 129, 0.6));
+  transform: scale(1.15);
+  transition: all 0.3s ease;
+}
+
+/* ── Tag pill ── */
+.tag-pill {
+  background: rgba(16, 185, 129, 0.12);
+  color: #10B981;
+  border: 1px solid rgba(16, 185, 129, 0.25);
+  padding: 6px 16px;
+  border-radius: 9999px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+/* ── Reusable button styles ── */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.875rem 2.25rem;
+  background-color: #10B981;
+  color: #000;
+  font-weight: 700;
+  font-size: 1rem;
+  border-radius: 0.75rem;
+  transition: background-color 0.2s, box-shadow 0.2s;
+  box-shadow: 0 0 20px rgba(16, 185, 129, 0.25);
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.btn-primary:hover {
+  background-color: #34D399;
+  box-shadow: 0 0 35px rgba(16, 185, 129, 0.45);
+}
+
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.875rem 2.25rem;
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(16, 185, 129, 0.35);
+  color: #10B981;
+  font-weight: 700;
+  font-size: 1rem;
+  border-radius: 0.75rem;
+  transition: background-color 0.2s;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.btn-outline:hover {
+  background: rgba(16, 185, 129, 0.1);
+}
+
+/* ── Card padding ── */
+.card-pad {
+  padding: 2.5rem;
+  /* 40px all sides */
+}
+
+.card-pad-lg {
+  padding: 3rem;
+  /* 48px all sides – About education card */
+}
+
+.card-content-indent {
+  padding-left: 2rem;
+  /* push content away from left accent bar */
+}
